@@ -20,7 +20,6 @@ else:
     app.set_tray_icon("src-pyloid/icons/icon.png")
 
 
-############################## Tray ################################
 def on_double_click():
     print("Tray icon was double-clicked.")
 
@@ -36,50 +35,26 @@ app.set_tray_menu_items(
         {"label": "Exit", "callback": app.quit},
     ]
 )
-####################################################################
-
-############################## Bridge ##############################
 
 
-class custom(PyloidAPI):
+class JSApi(PyloidAPI):
     @Bridge(result=str)
-    def create_window(self):
-        window = self.app.create_window(
-            title="Pyloid Browser-2",
-            js_apis=[custom()],
-        )
-
-        window.set_size(800, 600)
-        window.set_position(0, 0)
-
-        if is_production() and production_path:
-            window.set_dev_tools(False)
-            window.load_file(os.path.join(production_path, "frontend-dist/index.html"))
-        else:
-            window.set_dev_tools(True)
-            window.load_url("http://localhost:5173")
-
-        window.show()
-        window.focus()
-
-        return window.id
-
-
-####################################################################
+    def get_production_path(self):
+        return str(os.path.join(production_path, "frontend-dist"))
 
 
 if is_production() and production_path:
     # production
     window = app.create_window(
         title="Pyloid Browser-production",
-        js_apis=[custom()],
+        js_apis=[JSApi()],
         dev_tools=True,
     )
     window.load_file(os.path.join(production_path, "frontend-dist/index.html"))
 else:
     window = app.create_window(
         title="Pyloid Browser-dev",
-        js_apis=[custom()],
+        js_apis=[JSApi()],
         dev_tools=True,
     )
     window.load_url("http://localhost:5173")

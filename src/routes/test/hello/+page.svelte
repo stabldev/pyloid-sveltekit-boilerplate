@@ -2,6 +2,4 @@
   import Anchor from '$lib/components/Anchor.svelte';
 </script>
 
-<h1>Seeder</h1>
-
-<Anchor href="./test/hello">test</Anchor>
+YO Go to <Anchor href="/test">twetrwe</Anchor>

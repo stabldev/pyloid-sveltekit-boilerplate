@@ -25,9 +25,6 @@ build
 *.local
 .svelte-kit
 
-# Svelte
-frontend-dist
-
 # pyloid
 venv-pyloid
 
@@ -45,3 +42,10 @@ pnpm-lock.yaml
 
 # bun
 bun-lock.yaml
+
+# build.py handles that
+*.spec
+
+# Svelte
+
+frontend-dist/
