@@ -10,9 +10,11 @@ import os
 
 app = Pyloid(app_name="Pyloid-App", single_instance=True)
 
-if is_production():
-    app.set_icon(os.path.join(get_production_path(), "icons/icon.png"))
-    app.set_tray_icon(os.path.join(get_production_path(), "icons/icon.png"))
+production_path = get_production_path()
+
+if is_production() and production_path:
+    app.set_icon(os.path.join(production_path, "icons/icon.png"))
+    app.set_tray_icon(os.path.join(production_path, "icons/icon.png"))
 else:
     app.set_icon("src-pyloid/icons/icon.png")
     app.set_tray_icon("src-pyloid/icons/icon.png")
@@ -50,9 +52,9 @@ class custom(PyloidAPI):
         window.set_size(800, 600)
         window.set_position(0, 0)
 
-        if is_production():
+        if is_production() and production_path:
             window.set_dev_tools(False)
-            window.load_file(os.path.join(get_production_path(), "build/index.html"))
+            window.load_file(os.path.join(production_path, "build/index.html"))
         else:
             window.set_dev_tools(True)
             window.load_url("http://localhost:5173")
@@ -66,13 +68,13 @@ class custom(PyloidAPI):
 ####################################################################
 
 
-if is_production():
+if is_production() and production_path:
     # production
     window = app.create_window(
         title="Pyloid Browser-production",
         js_apis=[custom()],
     )
-    window.load_file(os.path.join(get_production_path(), "build/index.html"))
+    window.load_file(os.path.join(production_path, "build/index.html"))
 else:
     window = app.create_window(
         title="Pyloid Browser-dev",
