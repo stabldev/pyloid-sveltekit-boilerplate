@@ -1,12 +1,21 @@
-[tool.poetry]
-package-mode = false
+[project]
+name = "pyloid-sveltekit-boilerplate-main"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "baseplate-admin", email = "61817579+baseplate-admin@users.noreply.github.com" },
+]
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = ["pyloid (>=0.20.1,<0.21.0)"]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 
 [tool.pyright]
 venvPath = "./"
 venv = "venv-pyloid"
 pythonVersion = "3.12"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"

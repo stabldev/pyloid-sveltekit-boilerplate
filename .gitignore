@@ -25,6 +25,9 @@ build
 *.local
 .svelte-kit
 
+# Svelte
+frontend-dist
+
 # pyloid
 venv-pyloid
 
