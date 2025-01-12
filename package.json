@@ -10,6 +10,7 @@
     "dev:macos": "concurrently --raw --names \"front,pyloid\" \"npm run vite\" \"./venv-pyloid/bin/python ./src-pyloid/main.py\"",
     "vite": "vite dev",
     "build": "vite build && run-script-os",
+    "build:vite": "vite build",
     "build:windows": ".\\venv-pyloid\\Scripts\\pyinstaller build-windows.spec",
     "build:linux": "./venv-pyloid/bin/pyinstaller build-linux.spec",
     "build:macos": "./venv-pyloid/bin/pyinstaller build-macos.spec",
@@ -27,7 +28,7 @@
   "devDependencies": {
     "@eslint/compat": "^1.2.3",
     "@eslint/js": "^9.17.0",
-    "@sveltejs/adapter-auto": "^3.3.1",
+    "@sveltejs/adapter-static": "^3.0.8",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "concurrently": "^9.0.1",
