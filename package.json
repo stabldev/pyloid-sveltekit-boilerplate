@@ -10,6 +10,7 @@
     "dev:macos": "concurrently --raw --names \"front,pyloid\" \"npm run vite\" \"./venv-pyloid/bin/python ./src-pyloid/main.py\"",
     "vite": "vite dev",
     "build": "vite build && run-script-os",
+    "build:vite": "vite build",
     "build:windows": ".\\venv-pyloid\\Scripts\\pyinstaller build-windows.spec",
     "build:linux": "./venv-pyloid/bin/pyinstaller build-linux.spec",
     "build:macos": "./venv-pyloid/bin/pyinstaller build-macos.spec",
