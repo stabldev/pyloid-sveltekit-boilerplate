@@ -1,0 +1,40 @@
+{
+  "name": "pyloid-react-boilerplate",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "run-script-os",
+    "dev:windows": "concurrently --raw --names \"front,pyloid\" \"npm run vite\" \".\\venv-pyloid\\Scripts\\python .\\src-pyloid\\main.py\"",
+    "dev:linux": "concurrently --raw --names \"front,pyloid\" \"npm run vite\" \"./venv-pyloid/bin/python ./src-pyloid/main.py\"",
+    "dev:macos": "concurrently --raw --names \"front,pyloid\" \"npm run vite\" \"./venv-pyloid/bin/python ./src-pyloid/main.py\"",
+    "vite": "vite",
+    "build": "tsc -b && vite build && run-script-os",
+    "build:windows": ".\\venv-pyloid\\Scripts\\pyinstaller build-windows.spec",
+    "build:linux": "./venv-pyloid/bin/pyinstaller build-linux.spec",
+    "build:macos": "./venv-pyloid/bin/pyinstaller build-macos.spec",
+    "init": "npm install && run-script-os",
+    "init:windows": "python -m venv venv-pyloid && .\\venv-pyloid\\Scripts\\pip install -r requirements.txt",
+    "init:linux": "python3 -m venv venv-pyloid && ./venv-pyloid/bin/pip install -r requirements.txt",
+    "init:macos": "python3 -m venv venv-pyloid && ./venv-pyloid/bin/pip install -r requirements.txt"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^9.0.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "run-script-os": "^1.1.6",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^5.4.1"
+  }
+}
