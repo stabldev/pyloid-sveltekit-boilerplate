@@ -23,6 +23,7 @@ node_modules
 dist-ssr
 build
 *.local
+.svelte-kit
 
 # pyloid
 venv-pyloid
