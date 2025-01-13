@@ -1,6 +1,6 @@
-# Pyloid-React
+# Pyloid-SvelteKit
 
-Pyloid-React-Boilerplate is a template for projects combining a React frontend with a Python backend. Here, we'll explain in detail the project setup, development, and build process.
+Pyloid-SvelteKit-boilerplate is a template for projects combining a SvelteKit frontend with a Python backend. Here, we'll explain in detail the project setup, development, and build process.
 
 ### Prerequisites
 
@@ -17,10 +17,8 @@ npm run init
 This command performs the following tasks:
 
 1. Install npm packages
-2. Create a Python virtual environment (venv-pyloid)
-3. Install Python dependencies (based on requirements.txt)
-
-The appropriate script is executed depending on the operating system.
+2. Create a Python virtual environment using poetry (.venv)
+3. Install Python dependencies (based on pyproject.toml)
 
 ## 2. Running the Development Server
 
@@ -32,7 +30,7 @@ npm run dev
 
 This command performs the following tasks:
 
-1. Run the React frontend development server using Vite
+1. Run the SvelteKit frontend development server using Vite
 2. Run the Python backend server (src-pyloid/main.py)
 
 The concurrently package is used to run both processes in parallel.
@@ -47,33 +45,14 @@ npm run build
 
 This command performs the following tasks:
 
-1. TypeScript compilation (tsc -b)
-2. Frontend build using Vite
-3. Package the Python backend into an executable using PyInstaller
-
-### Backend Packaging with PyInstaller
-
-PyInstaller is a tool that converts Python applications into standalone executables. Pyloid Boilerplate uses different spec files for each operating system:
-
-- Windows: `build-windows.spec`
-- Linux: `build-linux.spec`
-- MacOS: `build-macos.spec`
-
-These spec files specify which files to include and what options to use for PyInstaller.
+1. Frontend build using Vite
+2. Package the Python backend into an executable using PyInstaller
 
 ### How PyInstaller Works
 
 1. Dependency Analysis: PyInstaller analyzes the Python script and its dependencies.
 2. File Collection: It collects all necessary Python modules, libraries, and data files.
 3. Binary Generation: It packages the collected files into a single directory or a single executable file.
-
-### Custom Build Process
-
-You can modify the build process to meet your project's specific requirements:
-
-1. Modify the scripts section in `package.json`
-2. Modify PyInstaller spec files (e.g., `build-windows.spec`, `build-linux.spec`, `build-macos.spec`)
-3. Write additional build scripts if necessary
 
 ### Important Notes
 
