@@ -53,3 +53,5 @@ bun-lock.yaml
 *.spec
 
 frontedn
+
+__pycache__
