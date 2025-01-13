@@ -28,6 +28,9 @@ build
 dist-front
 .svelte-kit
 
+# poetry
+.venv
+
 # pyloid
 venv-pyloid
 

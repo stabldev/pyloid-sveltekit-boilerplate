@@ -6,10 +6,17 @@ python = ">=3.9,<3.14"
 pyloid = "^0.20.1"
 pyinstaller = "^6.11.1"
 
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.32.1"
+
+[tool.poe.tasks]
+dev = "python ./src-pyloid/main.py"
+build = "python ./build.py"
+
 [tool.pyright]
 venvPath = "./"
-venv = "venv-pyloid"
-pythonVersion = "3.12"
+venv = ".venv"
+pythonVersion = "3.13"
 
 
 [build-system]
