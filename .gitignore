@@ -31,14 +31,11 @@ dist-front
 # poetry
 .venv
 
-# pyloid
-venv-pyloid
-
 # pyinstaller
 dist
 
 # npm
-package-lock.json
+# package-lock.json
 
 # yarn
 yarn.lock
