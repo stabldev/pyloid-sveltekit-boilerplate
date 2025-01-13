@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && run-script-os",
+    "build:vite": "vite build",
+    "build:windows": ".\\venv-pyloid\\Scripts\\python build.py",
+    "build:linux": "./venv-pyloid/bin/python build.py",
+    "build:macos": "./venv-pyloid/bin/python build.py",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
