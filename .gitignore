@@ -51,3 +51,5 @@ bun-lock.yaml
 
 # build.py handles that
 *.spec
+
+frontedn
