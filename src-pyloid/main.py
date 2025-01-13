@@ -40,7 +40,7 @@ app.set_tray_menu_items(
 class JSApi(PyloidAPI):
     @Bridge(result=str)
     def get_production_path(self):
-        return str(os.path.join(production_path, "front-dist"))
+        return str(os.path.join(production_path, "dist-front"))
 
 
 if is_production() and production_path:
@@ -50,7 +50,7 @@ if is_production() and production_path:
         js_apis=[JSApi()],
         dev_tools=True,
     )
-    window.load_file(os.path.join(production_path, "front-dist/index.html"))
+    window.load_file(os.path.join(production_path, "dist-front/index.html"))
 else:
     window = app.create_window(
         title="Pyloid Browser-dev",

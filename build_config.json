@@ -12,7 +12,7 @@
   "main_script": "src-pyloid/main.py",
   "datas": [
     ["src-pyloid/icons/", "src-pyloid/icons/"],
-    ["front-dist/", "front-dist/"]
+    ["dist-front/", "dist-front/"]
   ],
   "excludes": [
     "PySide6.QtQml",
