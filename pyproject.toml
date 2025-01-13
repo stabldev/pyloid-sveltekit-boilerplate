@@ -8,10 +8,16 @@ pyinstaller = "^6.11.1"
 
 [tool.poetry.group.dev.dependencies]
 poethepoet = "^0.32.1"
+black = "^24.10.0"
 
 [tool.poe.tasks]
 dev = "python ./src-pyloid/main.py"
 build = "python ./build.py"
+
+[tool.black]
+line-length = 92
+target-version = ["py36", "py37", "py38"]
+skip-string-normalization = true
 
 [tool.pyright]
 venvPath = "./"

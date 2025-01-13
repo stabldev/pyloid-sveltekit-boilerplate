@@ -9,7 +9,7 @@
     "init": "npm install && poetry install",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "format": "prettier --write .",
+    "format": "prettier --write . && poetry run black .",
     "lint": "prettier --check . && eslint .",
     "test": "npm run test:unit -- --run",
     "test:unit": "vitest"
