@@ -23,6 +23,9 @@ node_modules
 dist-ssr
 build
 *.local
+
+# sveltekit
+dist-front
 .svelte-kit
 
 # pyloid
@@ -42,3 +45,6 @@ pnpm-lock.yaml
 
 # bun
 bun-lock.yaml
+
+# build.py handles that
+*.spec
