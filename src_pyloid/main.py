@@ -2,7 +2,7 @@ import os
 from pyloid import Pyloid, get_production_path, is_production
 from .bridge import JSApi
 from .server import make_app
-import multiprocessing
+from threading import Thread
 from .functions import find_free_port
 
 PORT = find_free_port()
@@ -20,12 +20,10 @@ else:
 
 
 if is_production() and production_path:
-    print(PORT)
-    server = multiprocessing.Process(
+    server = Thread(
         target=make_app, args=(PORT, os.path.join(production_path, "dist-front"))
     )
     server.start()
-
     # production
     window = app.create_window(
         title="Pyloid Browser-production",

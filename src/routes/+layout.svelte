@@ -10,8 +10,4 @@
   });
 </script>
 
-<svelte:head>
-  <base href={base} />
-</svelte:head>
-
 {@render children()}
