@@ -2,8 +2,8 @@ import os
 from pyloid import Pyloid, get_production_path, is_production
 from .bridge import JSApi
 from .server import make_app
-from threading import Thread
 from .functions import find_free_port
+from multiprocessing import Process
 
 PORT = find_free_port()
 
@@ -20,7 +20,7 @@ else:
 
 
 if is_production() and production_path:
-    server = Thread(
+    server = Process(
         target=make_app, args=(PORT, os.path.join(production_path, "dist-front"))
     )
     server.start()
