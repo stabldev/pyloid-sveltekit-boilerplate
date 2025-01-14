@@ -9,7 +9,7 @@
     ]
   },
   "name": "pyloid-app",
-  "main_script": "src_pyloid/main.py",
+  "main_script": "run.py",
   "datas": [
     ["src_pyloid/icons/", "src_pyloid/icons/"],
     ["dist-front/", "dist-front/"]
