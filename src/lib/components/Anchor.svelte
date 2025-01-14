@@ -3,12 +3,11 @@
   import { onMount, type Snippet } from 'svelte';
 
   let { href, children }: { href: string; children: Snippet } = $props();
-
   // Add `.html` prefix to href because of `prerender`-ing
   let base = $state('');
 
   onMount(async () => {
-    base = (await window.pyloid.JSApi.get_production_path()) || '';
+    base = (await window.pyloid.JSApi.get_production_path()) ?? '';
   });
 
   if (!dev) href = href + '.html';
@@ -21,5 +20,5 @@
 
 <!-- Hide this link object from prerender -->
 {#if browser}
-  <a {href}>{@render children?.()}</a>
+  <a {href}>{@render children()}</a>
 {/if}

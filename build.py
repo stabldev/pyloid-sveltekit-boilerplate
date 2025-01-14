@@ -6,6 +6,5 @@ def main():
     cleanup_before_build("build_config.json")
     build_from_spec(spec_path)
 
-
 if __name__ == "__main__":
     main()
