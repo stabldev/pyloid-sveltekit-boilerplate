@@ -8,7 +8,11 @@ from multiprocessing import Process
 PORT = find_free_port()
 
 app = Pyloid(app_name="Pyloid-App", single_instance=True)
-production_path = get_production_path()
+
+if is_production():
+    production_path = get_production_path()
+else:
+    production_path = os.getcwd()
 
 
 if is_production() and production_path:
@@ -18,12 +22,15 @@ else:
     app.set_icon("src-pyloid/icons/icon.png")
     app.set_tray_icon("src-pyloid/icons/icon.png")
 
+server = Process(
+    target=make_app,
+    args=(5173, os.path.join(production_path, "dist-front")),
+    daemon=True,
+)
+server.start()
+server.join()
 
 if is_production() and production_path:
-    server = Process(
-        target=make_app, args=(PORT, os.path.join(production_path, "dist-front"))
-    )
-    server.start()
     # production
     window = app.create_window(
         title="Pyloid Browser-production",
