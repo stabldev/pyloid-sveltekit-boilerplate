@@ -4,6 +4,7 @@ from .bridge import JSApi
 from .server import make_app
 from .functions import find_free_port
 from multiprocessing import Process
+from threading import Thread
 
 PORT = find_free_port()
 
@@ -22,13 +23,12 @@ else:
     app.set_icon("src-pyloid/icons/icon.png")
     app.set_tray_icon("src-pyloid/icons/icon.png")
 
-server = Process(
+server = Thread(
     target=make_app,
-    args=(5173, os.path.join(production_path, "dist-front")),
-    daemon=True,
+    args=(PORT, os.path.join(production_path, "dist-front")),
 )
+server.daemon = True
 server.start()
-server.join()
 
 if is_production() and production_path:
     # production
@@ -45,5 +45,3 @@ else:
         dev_tools=True,
     )
     window.load_url("http://localhost:5173")
-
-window.show_and_focus()
