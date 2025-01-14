@@ -1,15 +1,13 @@
+import os
 from pyloid import (
     Pyloid,
-    PyloidAPI,
-    Bridge,
     TrayEvent,
     is_production,
     get_production_path,
 )
-import os
+from .bridge import JSApi
 
 app = Pyloid(app_name="Pyloid-App", single_instance=True)
-
 production_path = get_production_path()
 
 if is_production() and production_path:
@@ -36,19 +34,12 @@ app.set_tray_menu_items(
     ]
 )
 
-
-class JSApi(PyloidAPI):
-    @Bridge(result=str)
-    def get_production_path(self):
-        return str(os.path.join(production_path, "dist-front"))
-
-
 if is_production() and production_path:
     # production
     window = app.create_window(
         title="Pyloid Browser-production",
         js_apis=[JSApi()],
-        dev_tools=True,
+        dev_tools=False,
     )
     window.load_file(os.path.join(production_path, "dist-front/index.html"))
 else:
