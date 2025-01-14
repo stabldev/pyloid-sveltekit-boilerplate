@@ -1,4 +1,5 @@
-from pyloid.builder import create_spec_from_json, build_from_spec, cleanup_before_build
+from pyloid.builder import (build_from_spec, cleanup_before_build,
+                            create_spec_from_json)
 
 
 def main():

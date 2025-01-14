@@ -9,10 +9,13 @@ pyinstaller = "^6.11.1"
 [tool.poetry.group.dev.dependencies]
 poethepoet = "^0.32.1"
 black = "^24.10.0"
+flake8 = "^7.1.1"
 
 [tool.poe.tasks]
 dev = "python ./run.py"
 build = "python ./build.py"
+format = "black ./"
+lint = "flake8 ./"
 
 [tool.black]
 line-length = 92

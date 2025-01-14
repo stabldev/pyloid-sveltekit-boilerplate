@@ -1,9 +1,5 @@
 import os
-from pyloid import (
-    PyloidAPI,
-    Bridge,
-    get_production_path,
-)
+from pyloid import Bridge, PyloidAPI, get_production_path
 
 
 class URL(PyloidAPI):
