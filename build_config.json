@@ -9,9 +9,9 @@
     ]
   },
   "name": "pyloid-app",
-  "main_script": "src-pyloid/main.py",
+  "main_script": "src_pyloid/main.py",
   "datas": [
-    ["src-pyloid/icons/", "src-pyloid/icons/"],
+    ["src_pyloid/icons/", "src_pyloid/icons/"],
     ["dist-front/", "dist-front/"]
   ],
   "excludes": [
@@ -27,7 +27,7 @@
     "PySide6.QtUiTools",
     "PySide6.QtHelp"
   ],
-  "icon": "\"src-pyloid/icons/icon.ico\"",
+  "icon": "src_pyloid/icons/icon.ico",
   "bundle": {
     "windows": "onefile",
     "macos": "app",

@@ -1,12 +1,9 @@
 {
-  "name": "pyloid-sveltekit-boilerplate",
   "private": true,
-  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "concurrently --raw --names \"kit,pyloid\" \"vite dev\" \"poetry run poe dev\" ",
-    "build": "vite build && poetry run poe build",
-    "init": "npm install && poetry install",
+    "dev": "vite dev",
+    "build": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write . && poetry run black .",

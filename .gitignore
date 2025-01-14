@@ -33,6 +33,7 @@ dist-front
 
 # pyloid
 venv-pyloid
+__pycache__
 
 # pyinstaller
 dist
