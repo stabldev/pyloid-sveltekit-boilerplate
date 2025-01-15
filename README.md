@@ -11,10 +11,11 @@ Pyloid-SvelteKit-boilerplate is a template for projects combining a SvelteKit fr
 Before starting the project, you need to install all necessary dependencies.
 
 ```bash
-npm run init
+npm install # node
+poetry install # python
 ```
 
-This command performs the following tasks:
+These commands performs the following tasks:
 
 1. Install npm packages
 2. Create a Python virtual environment using poetry (.venv)
@@ -25,13 +26,14 @@ This command performs the following tasks:
 During development, you can run both frontend and backend servers simultaneously with the following command:
 
 ```bash
-npm run dev
+npm run dev # sveltekit
+poetry run poe dev # pyloid
 ```
 
-This command performs the following tasks:
+These commands performs the following tasks:
 
 1. Run the SvelteKit frontend development server using Vite
-2. Run the Python backend server (src-pyloid/main.py)
+2. Run the Python backend server (run.py)
 
 The concurrently package is used to run both processes in parallel.
 
@@ -40,10 +42,11 @@ The concurrently package is used to run both processes in parallel.
 To build the project for production deployment, use the following command:
 
 ```bash
-npm run build
+npm run build # sveltekit
+poetry run poe build # pyloid
 ```
 
-This command performs the following tasks:
+These commands performs the following tasks:
 
 1. Frontend build using Vite
 2. Package the Python backend into an executable using PyInstaller
