@@ -16,6 +16,10 @@ const config = {
       strict: true,
       fallback: '404.html'
     }),
+    paths: {
+      assets: 'http://REPLACEME',
+      relative: true
+    },
     router: {
       type: 'hash'
     }
