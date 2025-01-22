@@ -1,3 +1,9 @@
+/**
+ * A module to patch svelte's weird behavior
+ *
+ * @see https://github.com/sveltejs/kit/issues/9569#issuecomment-1767949037
+ */
+
 import fs from 'node:fs';
 import path from 'node:path';
 
