@@ -1,17 +1,16 @@
 [project]
-name = ""
+name = "svelte_pyloid_boilerplate"
 version = "0.0.1"
-requires-python = ">=3.9,<3.14"
-dependencies = [
-    "pyloid>=0.20.1,<0.21",
-    "pyinstaller>=6.11.1,<7",
-]
+requires-python = ">=3.13,<3.14"
+dependencies = ["pyloid>=0.20.1,<0.21"]
 
 [dependency-groups]
 dev = [
     "poethepoet>=0.32.1,<0.33",
     "black>=24.10.0,<25",
     "flake8>=7.1.1,<8",
+    "pyinstaller>=6.11.1",
+    "ruff>=0.9.2",
 ]
 
 [tool.uv]
@@ -26,13 +25,3 @@ dev = "python ./run.py"
 build = "python ./build.py"
 format = "black ./"
 lint = "flake8 ./"
-
-[tool.black]
-line-length = 92
-target-version = ["py36", "py37", "py38"]
-skip-string-normalization = true
-
-[tool.pyright]
-venvPath = "./"
-venv = ".venv"
-pythonVersion = "3.13"
