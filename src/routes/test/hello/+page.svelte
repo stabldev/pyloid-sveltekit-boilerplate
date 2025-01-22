@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Anchor from '$lib/components/Anchor.svelte';
 </script>
 
-YO Go to <Anchor href="/test">twetrwe</Anchor>
+YO Go to <a href="#/test">twetrwe</a>
