@@ -1,5 +1,5 @@
-from pyloid import PyloidAPI
+from .url import URL
 
 
-class JSApi(PyloidAPI):
+class JSApi(URL):
     pass
