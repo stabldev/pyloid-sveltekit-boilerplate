@@ -1,20 +1,12 @@
 import os
 from pyloid import Pyloid, get_production_path, is_production
 from .bridge import JSApi
-from .server import make_app
-import multiprocessing
 from .functions import find_free_port
 
 PORT = find_free_port()
 
 app = Pyloid(app_name="Pyloid-App", single_instance=True)
 production_path = get_production_path()
-
-if is_production():
-    server = multiprocessing.Process(
-        target=make_app, args=(PORT, os.path.join(production_path, "dist-front"))
-    )
-    server.start()
 
 
 if is_production() and production_path:
@@ -30,9 +22,9 @@ if is_production() and production_path:
     window = app.create_window(
         title="Pyloid Browser-production",
         js_apis=[JSApi()],
-        dev_tools=False,
+        dev_tools=True,
     )
-    window.load_url(f"http://localhost:{PORT}")
+    window.load_file(os.path.join(production_path, "dist-front/index.html"))
 else:
     window = app.create_window(
         title="Pyloid Browser-dev",
