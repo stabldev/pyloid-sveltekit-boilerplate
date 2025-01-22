@@ -17,7 +17,7 @@ const config = {
       fallback: '404.html'
     }),
     paths: {
-      assets: 'http://REPLACEME',
+      assets: 'http://<REPLACEME>',
       relative: true
     },
     router: {

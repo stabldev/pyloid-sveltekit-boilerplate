@@ -27,7 +27,7 @@ if (files) {
       return;
     }
     fs.readFile(file, 'utf8', (_, data) => {
-      fs.writeFile(file, data.replace(/http:\/\/REPLACEME/g, '.'), 'utf8', () => {
+      fs.writeFile(file, data.replace(/http:\/\/<REPLACEME>/g, '.'), 'utf8', () => {
         console.log("Wrote file '" + file + "'");
       });
     });
